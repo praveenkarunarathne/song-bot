@@ -42,8 +42,8 @@ def hello(client, message):
     song=j[0]
     track_id=song.id
     arl = "5896d2a9fc5b0e010aa4c2795cb9933ba70d4ef518bc565907a7f2f168ed893749eb4c898ab35628428f486c87a8a814c3241be83c43668352e3a3914cbd35bbb055a3d35ab332bf8780354c142bfdd37f84e89156c674c2521ff4c9349c692d"
-    deezer = Deezer(arl=arl)
-    track = deezer.get_track(track_id)
+    teezer = Deezer(arl=arl)
+    track = teezer.get_track(track_id)
     cd=os.getcwd()
     os.mkdir("Music")
     download_dir = os.path.join(cd,"Music")
