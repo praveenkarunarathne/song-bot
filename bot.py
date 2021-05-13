@@ -21,7 +21,7 @@ def hello(client, message):
     endi  = url.find("&")
     id = url[starti:endi]
     ytmusic = YTMusic()
-    a=YTMusic.get_song(videoId=id)
+    a=ytmusic.get_song(videoId=id)
     b=a["title"]
     starta = b.find("") + len("")
     enda  = b.find("-")
