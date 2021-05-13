@@ -54,7 +54,7 @@ def hello(client, message):
     sname=k[0]
     path=os.path.join(download_dir,sname)
     message.reply_chat_action("upload_audio")
-    message.reply_audio(path,quote=True,caption=sname)
+    message.reply_audio(path,quote=True)
     shutil.rmtree(download_dir)
     
 app.run()
