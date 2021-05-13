@@ -2,7 +2,8 @@ from pyrogram import Client,filters
 import re
 from ytmusicapi import YTMusic
 import deezer
-from pydeezer import Deezer
+from pydeezer import Deezer,Downloader
+from pydeezer.constants import track_formats
 import os
 import shutil
 
