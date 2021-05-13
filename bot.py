@@ -6,6 +6,7 @@ from pydeezer import Deezer,Downloader
 from pydeezer.constants import track_formats
 import os
 import shutil
+import time
 
 api_id=2940667
 api_hash="8590c88aca3638eb321979577ddb53d3"
@@ -53,6 +54,7 @@ def hello(client, message):
     k=os.listdir(download_dir)
     sname=k[0]
     path=os.path.join(download_dir,sname)
+    time.sleep(10)
     message.reply_chat_action("upload_audio")
     message.reply_audio(path,quote=True)
     shutil.rmtree(download_dir)
