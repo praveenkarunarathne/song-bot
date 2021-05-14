@@ -29,7 +29,10 @@ def hello(client, message):
     c = b[starta:enda]
     d=c.split()
     e=d[0]
-    f=d[1]
+    try:
+        f=d[1]
+    except:
+        f=""
     if f=="ft" or f=="Ft" or f=="feat" or f=="Feat" or f=="ft." or f=="Ft." or f=="feat." or f=="Feat." or f=="&":
     	artist=e
     else:
@@ -40,21 +43,27 @@ def hello(client, message):
     name=i[0]
     client = deezer.Client()
     j=client.advanced_search({"artist":artist,"track":name})
-    song=j[0]
-    track_id=song.id
-    arl = "5896d2a9fc5b0e010aa4c2795cb9933ba70d4ef518bc565907a7f2f168ed893749eb4c898ab35628428f486c87a8a814c3241be83c43668352e3a3914cbd35bbb055a3d35ab332bf8780354c142bfdd37f84e89156c674c2521ff4c9349c692d"
-    teezer = Deezer(arl=arl)
-    track = teezer.get_track(track_id)
-    cd=os.getcwd()
-    os.mkdir("Music")
-    download_dir = os.path.join(cd,"Music")
-    message.reply_chat_action("record_audio")
-    track["download"](download_dir, quality=track_formats.MP3_320)
-    k=os.listdir(download_dir)
-    sname=k[1]
-    path=os.path.join(download_dir,sname)
-    message.reply_chat_action("upload_audio")
-    message.reply_audio(path,quote=True)
-    shutil.rmtree(download_dir)
+    try:
+        song=j[0]
+        track_id=song.id
+        arl = "5896d2a9fc5b0e010aa4c2795cb9933ba70d4ef518bc565907a7f2f168ed893749eb4c898ab35628428f486c87a8a814c3241be83c43668352e3a3914cbd35bbb055a3d35ab332bf8780354c142bfdd37f84e89156c674c2521ff4c9349c692d"
+        teezer = Deezer(arl=arl)
+        track = teezer.get_track(track_id)
+        cd=os.getcwd()
+        try:
+            os.mkdir("Music")
+        except:
+            pass
+        download_dir = os.path.join(cd,"Music")
+        message.reply_chat_action("record_audio")
+        track["download"](download_dir, quality=track_formats.MP3_320)
+        k=os.listdir(download_dir)
+        sname=k[1]
+        path=os.path.join(download_dir,sname)
+        message.reply_chat_action("upload_audio")
+        message.reply_audio(path,quote=True)
+        shutil.rmtree(download_dir)
+    except:
+        message.reply_text(h)
     
 app.run()
