@@ -58,7 +58,7 @@ def hello(client, message):
         download_dir = os.path.join(cd,"Music")
         message.reply_chat_action("record_audio")
         track["download"](download_dir, quality=track_formats.MP3_320)
-        files = glob.glob(os.path.join(download_dir, '*.zip'))
+        files = glob.glob(os.path.join(download_dir, '*.mp3'))
         path=files[0]
         message.reply_chat_action("upload_audio")
         message.reply_audio(path,quote=True)
