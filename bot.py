@@ -6,6 +6,7 @@ from pydeezer import Deezer,Downloader
 from pydeezer.constants import track_formats
 import os
 import shutil
+import glob
 
 api_id=2940667
 api_hash="8590c88aca3638eb321979577ddb53d3"
@@ -57,9 +58,8 @@ def hello(client, message):
         download_dir = os.path.join(cd,"Music")
         message.reply_chat_action("record_audio")
         track["download"](download_dir, quality=track_formats.MP3_320)
-        k=os.listdir(download_dir)
-        sname=k[1]
-        path=os.path.join(download_dir,sname)
+        files = glob.glob(os.path.join(download_dir, '*.zip'))
+        path=files[0]
         message.reply_chat_action("upload_audio")
         message.reply_audio(path,quote=True)
         shutil.rmtree(download_dir)
