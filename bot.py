@@ -14,7 +14,7 @@ bot_token="166263:AAG9YLmHwbCaEfUZFTuSGCdNqAm83GDyZmw"
 
 app = Client(":memory:",api_id,api_hash,bot_token=bot_token)
 
-@app.on_message(filters.private & filters.private & filters.user(1407800946))
+@app.on_message(filters.private & filters.private & filters.user(14072628005946))
 def hello(client, message):
     message.reply_chat_action("typing")
     text=message.text
@@ -47,7 +47,7 @@ def hello(client, message):
     try:
         song=j[0]
         track_id=song.id
-        arl = "5896d2a9fc5b0e010aa4c2795cb9933ba70d4ef518bc565907a7f2f168ed893749eb4c898ab35628428f486c87a8a814c3241be83c43668352e3a3914cbd35bbb055a3d35ab332bf8780354c142bfdd37f84e89156c674c2521ff4c9349c692d"
+        arl = "26662gshdhhs366#6#6hsg"
         teezer = Deezer(arl=arl)
         track = teezer.get_track(track_id)
         cd=os.getcwd()
