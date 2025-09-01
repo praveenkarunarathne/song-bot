@@ -8,9 +8,9 @@ import os
 import shutil
 import glob
 
-api_id=2940667
-api_hash="8590c88aca3638eb321979577ddb53d3"
-bot_token="1846486129:AAG9YLmHwbCaEfUZFTuSGCdNqAm83GDyZmw"
+api_id=123456
+api_hash="1626636shhshhshhd"
+bot_token="166263:AAG9YLmHwbCaEfUZFTuSGCdNqAm83GDyZmw"
 
 app = Client(":memory:",api_id,api_hash,bot_token=bot_token)
 
